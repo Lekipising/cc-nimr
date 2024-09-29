@@ -87,6 +87,16 @@ export default function Home() {
             className="object-contain"
           />
         </div> */}
+
+        <div className="absolute bottom-8 left-0 w-full text-left pl-16 text-white">
+          <h2 className="font-extrabold text-2xl">
+            Serving Patients During a Pandemic
+          </h2>
+          <p className="mt-1">
+            Delivering essential medication to NIMR patients with adherence{" "}
+            <br /> to quality of service, care and confidentiality.
+          </p>
+        </div>
       </section>
     </main>
   );
