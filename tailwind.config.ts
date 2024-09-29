@@ -9,8 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        nim: {
+          300: "#276DF7",
+          400: "#005DCC",
+          500: "#1F5AF4",
+          600: "#0148FF",
+          700: "#006AE7",
+        },
       },
     },
   },

@@ -1,5 +1,93 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="font-[family-name:var(--font-geist-sans)] h-svh w-full flex"></main>
+    <main className="font-[family-name:var(--font-geist-sans)] h-svh w-full flex">
+      <section className="w-[40%] h-full flex justify-start relative flex-col items-center pt-16 gap-16">
+        <Image src="/logo.svg" alt="Nimcure Logo" height={56} width={56} />
+
+        <form className="flex flex-col my-auto gap-8 w-full max-w-sm mx-auto">
+          <h1 className="font-medium text-xl text-[#2A2A2A]">
+            Sign in to continue
+          </h1>
+          <div className="flex flex-col gap-6">
+            <div className="">
+              <input
+                type="text"
+                name="email"
+                placeholder="Email Address"
+                className="border-[1px] border-[#808080] outline-none transition-all ease-in duration-300 h-[60px] p-4 color-[#000000] w-full focus:border-nim-500 focus-within:border-nim-500 font-medium"
+              />
+            </div>
+            <div className="relative w-full">
+              <input
+                type="text"
+                name="password"
+                placeholder="Password"
+                className="border-[1px] pr-16 border-[#808080] outline-none transition-all ease-in duration-300 h-[60px] p-4 color-[#000000] w-full focus:border-nim-500 focus-within:border-nim-500 font-medium"
+              />
+              <button className="absolute top-1/2 right-4 text-gray-500 font-medium text-sm transform -translate-y-1/2">
+                SHOW
+              </button>
+            </div>
+            <div className="flex justify-between items-center">
+              <label
+                htmlFor="rememberme"
+                className="text-[#2A2A2A] font-medium flex items-center"
+              >
+                <input
+                  type="checkbox"
+                  name="rememberme"
+                  id="rememberme"
+                  className="mr-2 h-4 accent-nim-500 w-4"
+                />
+                Remember me
+              </label>
+              <Link
+                className="text-nim-500 font-medium"
+                href="/forgot-password"
+              >
+                Forgot Password?
+              </Link>
+            </div>
+
+            <button className="bg-nim-500 mt-8 text-white font-semibold h-[60px] transition-all ease-in duration-300 hover:bg-nim-600">
+              Login
+            </button>
+          </div>
+        </form>
+
+        <footer className="absolute bottom-4 left-0 w-full flex justify-center items-center">
+          <p className="flex items-center font-medium gap-2 text-sm">
+            Powered by{" "}
+            <a
+              href="https://nimcure.com"
+              className="text-nim-500 font-medium"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                src="/cchub.png"
+                alt="Nimcure"
+                height={8}
+                width={150}
+                className="object-contain"
+              />
+            </a>
+          </p>
+        </footer>
+      </section>
+      <section className="w-[60%] h-full bg-nim-500 overflow-visible relative">
+        {/* <div className="relative w-[calc(100%_+_300px)] h-full">
+          <Image
+            src="https://res.cloudinary.com/dpnbddror/image/upload/v1727543456/Group_625593_1_yyhppt.png"
+            alt="Nimcure"
+            fill
+            className="object-contain"
+          />
+        </div> */}
+      </section>
+    </main>
   );
 }
