@@ -78,7 +78,7 @@ export default function DashboardNav() {
           />
         </svg>
       ),
-      to: "/dashboard/dispatch-riders",
+      to: "/dashboard/riders",
     },
     {
       title: "Admin",
@@ -102,7 +102,7 @@ export default function DashboardNav() {
   ];
 
   return (
-    <header className="w-full border-b-[1px] border-[#827F9833] justify-between flex items-end px-16">
+    <header className="w-full border-b-[1px] border-[#827F9833] justify-between flex items-end">
       <Link href="/dashboard" className="my-auto">
         <Image
           src="/nimr.svg"
