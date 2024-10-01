@@ -14,7 +14,7 @@ export default function PatientSidebar() {
     },
     {
       text: "Rider’s Profile",
-      to: "/dashboard/patients/1/rider",
+      to: "/dashboard/patients/1/rider-info",
     },
     {
       text: "Delivery History",
