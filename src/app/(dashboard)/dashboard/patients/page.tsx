@@ -1,5 +1,10 @@
 import React from "react";
+import PatientTable from "./components/patients.table";
 
 export default function DashboardOverview() {
-  return <section>Hello</section>;
+  return (
+    <section>
+      <PatientTable />
+    </section>
+  );
 }
