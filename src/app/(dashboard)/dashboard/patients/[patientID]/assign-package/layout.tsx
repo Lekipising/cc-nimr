@@ -7,7 +7,7 @@ export default function AssignPackageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="w-full flex flex-col mt-8">
+    <section className="w-full flex flex-col relative mt-8 min-h-[calc(100vh_-_200px)]">
       <AssignPackageWrapper />
       <div className="w-full flex mt-16">
         <div className="w-[400px] flex flex-col gap-8">
@@ -20,7 +20,7 @@ export default function AssignPackageLayout({
           />
           <PatientInfoPair label="Location" value="Yaba, Lagos" />
         </div>
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 ml-32 w-auto mr-0">{children}</div>
       </div>
     </section>
   );
