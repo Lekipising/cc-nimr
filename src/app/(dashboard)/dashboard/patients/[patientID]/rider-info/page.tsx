@@ -64,7 +64,7 @@ export default function RiderInfo() {
   );
 }
 
-function PatientInfo({
+export function PatientInfo({
   title,
   value,
   type = "text",
