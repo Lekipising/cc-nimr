@@ -1,5 +1,6 @@
 import React from "react";
 import PatientSidebar from "./components/patient.sidebar";
+import PatientTopbar from "./components/patient.topbar";
 
 export default function ViewPatient() {
   return (
@@ -18,9 +19,11 @@ export default function ViewPatient() {
         </button>
       </div>
 
-      <div className="w-full flex">
+      <div className="w-full flex mt-16">
         <PatientSidebar />
-        <div className="flex-1 outline">2</div>
+        <div className="flex-1 flex flex-col">
+          <PatientTopbar />
+        </div>
       </div>
     </section>
   );
