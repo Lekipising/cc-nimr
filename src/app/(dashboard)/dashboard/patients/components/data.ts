@@ -6,6 +6,7 @@ export const patientsData = [
     nextDeliveryDate: "12th September 2020",
     location: "VI, Lagos",
     status: "Completed",
+    id: "1",
   },
   {
     hospitalID: "1AFHFH093",
@@ -14,6 +15,7 @@ export const patientsData = [
     nextDeliveryDate: "12th September 2020",
     location: "VI, Lagos",
     status: "Completed",
+    id: "2",
   },
   {
     hospitalID: "1AFHFH093",
@@ -22,6 +24,7 @@ export const patientsData = [
     nextDeliveryDate: "12th September 2020",
     location: "VI, Lagos",
     status: "Due & Paid",
+    id: "3",
   },
   {
     hospitalID: "1AFHFH093",
@@ -30,6 +33,7 @@ export const patientsData = [
     nextDeliveryDate: "12th September 2020",
     location: "VI, Lagos",
     status: "Due & Unpaid",
+    id: "4",
   },
   {
     hospitalID: "1AFHFH093",
@@ -38,6 +42,7 @@ export const patientsData = [
     nextDeliveryDate: "12th September 2020",
     location: "VI, Lagos",
     status: "Assigned",
+    id: "5",
   },
   {
     hospitalID: "1AFHFH093",
@@ -46,6 +51,7 @@ export const patientsData = [
     nextDeliveryDate: "12th September 2020",
     location: "VI, Lagos",
     status: "Assigned",
+    id: "6",
   },
   {
     hospitalID: "1AFHFH093",
@@ -54,5 +60,6 @@ export const patientsData = [
     nextDeliveryDate: "12th September 2020",
     location: "VI, Lagos",
     status: "Completed",
+    id: "7",
   },
 ];

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { patientsData } from "./data";
+import Link from "next/link";
 
 function PatientsTable() {
   return (
@@ -120,6 +121,7 @@ function PatientRow({
     nextDeliveryDate: string;
     location: string;
     status: string;
+    id: string;
   };
 }) {
   const statusColor = () => {
@@ -148,9 +150,12 @@ function PatientRow({
         </span>
       </td>
       <td className="p-2 py-6">
-        <button className="text-[#276DF7] px-6 hover:bg-[#276DF7] hover:text-white transition-all ease-in duration-150 py-2 font-bold hover:underline border-[1px] border-[#276DF799]">
+        <Link
+          href={`/dashboard/patients/${patient.id}`}
+          className="text-[#276DF7] px-6 hover:bg-[#276DF7] hover:text-white transition-all ease-in duration-150 py-2 font-bold hover:underline border-[1px] border-[#276DF799]"
+        >
           View
-        </button>
+        </Link>
       </td>
     </tr>
   );

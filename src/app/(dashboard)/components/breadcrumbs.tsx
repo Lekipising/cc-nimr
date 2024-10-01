@@ -72,5 +72,5 @@ export default function BreadCrumbs() {
     );
   });
 
-  return <div>{breadcrumbItems}</div>;
+  return <div className="text-[#2A2A2A]">{breadcrumbItems}</div>;
 }
