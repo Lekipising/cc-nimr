@@ -1,5 +1,6 @@
 import React from "react";
-import PatientSidebar from "./components/patient.sidebar";
+import PatientSidebar from "../components/patient.sidebar";
+import Link from "next/link";
 
 export default function PatientView({
   children,
@@ -17,9 +18,12 @@ export default function PatientView({
             </span>
           </p>
         </div>
-        <button className="h-[45px] w-[220px] text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold">
+        <Link
+          href={`/dashboard/patients/1/assign-package`}
+          className="h-[45px] w-[220px] text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
+        >
           Assign Package to Patient
-        </button>
+        </Link>
       </div>
 
       <div className="w-full flex mt-16">

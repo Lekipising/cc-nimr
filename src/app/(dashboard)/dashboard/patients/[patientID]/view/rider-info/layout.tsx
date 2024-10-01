@@ -1,5 +1,5 @@
 import React from "react";
-import PatientTopbar from "../components/patient.topbar";
+import PatientTopbar from "../../components/patient.topbar";
 
 export default function RiderInfoLayout({
   children,

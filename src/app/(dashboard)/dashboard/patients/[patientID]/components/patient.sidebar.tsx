@@ -10,15 +10,15 @@ export default function PatientSidebar() {
   const sidebarItems = [
     {
       text: "Patient",
-      to: "/dashboard/patients/1",
+      to: "/dashboard/patients/1/view",
     },
     {
       text: "Rider’s Profile",
-      to: "/dashboard/patients/1/rider-info",
+      to: "/dashboard/patients/1/view/rider-info",
     },
     {
       text: "Delivery History",
-      to: "/dashboard/patients/1/delivery-history",
+      to: "/dashboard/patients/1/view/delivery-history",
     },
   ];
 

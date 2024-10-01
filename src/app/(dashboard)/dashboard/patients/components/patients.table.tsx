@@ -151,7 +151,7 @@ function PatientRow({
       </td>
       <td className="p-2 py-6">
         <Link
-          href={`/dashboard/patients/${patient.id}`}
+          href={`/dashboard/patients/${patient.id}/view`}
           className="text-[#276DF7] px-6 hover:bg-[#276DF7] hover:text-white transition-all ease-in duration-150 py-2 font-bold hover:underline border-[1px] border-[#276DF799]"
         >
           View

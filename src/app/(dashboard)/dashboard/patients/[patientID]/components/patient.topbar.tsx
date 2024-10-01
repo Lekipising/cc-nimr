@@ -10,11 +10,11 @@ export default function PatientTopbar() {
   const topbarItems = [
     {
       text: "Patient Information",
-      to: "/dashboard/patients/1/rider-info",
+      to: "/dashboard/patients/1/view/rider-info",
     },
     {
       text: "Delivery Information",
-      to: "/dashboard/patients/1/rider-info/delivery-info",
+      to: "/dashboard/patients/1/view/rider-info/delivery-info",
     },
   ];
 
