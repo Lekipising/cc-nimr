@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function AssignPackagePage() {
-  return <section className="p-8">Assign Package</section>;
+export default function DrugCycle() {
+  return <section className="p-8">Drug Cycle</section>;
 }
