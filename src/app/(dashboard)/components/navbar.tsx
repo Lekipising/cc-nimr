@@ -120,7 +120,11 @@ export default function DashboardNav() {
             title={item.title}
             svg={item.svg}
             to={item.to}
-            isActive={pathname === item.to}
+            isActive={
+              item.to === "/dashboard"
+                ? pathname === item.to
+                : pathname.startsWith(item.to)
+            }
           />
         ))}
       </div>
