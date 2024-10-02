@@ -34,8 +34,6 @@ export default function BreadCrumbs() {
       .slice(0, index + 1)
       .join("/")}`;
 
-    console.log(segment);
-
     let label = segment;
 
     // Customize labels for specific paths
