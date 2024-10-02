@@ -50,7 +50,7 @@ function OneSideItem({
       href={to}
       className={`w-full flex justify-start pl-8 h-[60px] items-center ${
         isActive
-          ? "font-bold text-[#276DF7] bg-[#276DF71A] text-base"
+          ? "font-bold text-[#276DF7] bg-[#276DF71A] text-base border-r-[3px] border-[#276DF7]"
           : "font-medium text-sm text-[#2A2A2A80] bg-transparent"
       } hover:bg-[#276DF71A] hover:text-[#276DF7] transition-all ease-in duration-150`}
     >

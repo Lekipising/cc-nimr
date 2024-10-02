@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Deliveries() {
-  return <section>Hello</section>;
+  return <section className="p-8">Coming Soon</section>;
 }

@@ -22,7 +22,7 @@ export default function Home() {
             </div>
             <div className="relative w-full">
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Password"
                 className="border-[1px] pr-16 border-[#808080] outline-none transition-all ease-in duration-300 h-[60px] p-4 color-[#000000] w-full focus:border-nim-500 focus-within:border-nim-500 font-medium"
@@ -52,9 +52,12 @@ export default function Home() {
               </Link>
             </div>
 
-            <button className="bg-nim-500 mt-8 text-white font-semibold h-[60px] transition-all ease-in duration-300 hover:bg-nim-600">
+            <Link
+              href="/dashboard"
+              className="bg-nim-500 mt-8 text-white flex justify-center items-center font-semibold h-[60px] transition-all ease-in duration-300 hover:bg-nim-600"
+            >
               Login
-            </button>
+            </Link>
           </div>
         </form>
 
