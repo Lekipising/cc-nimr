@@ -62,8 +62,7 @@ This project prioritizes the user experience and UI design, ensuring a seamless 
 2. **Install dependencies**: `pnpm install`
 3. **Run the development server**: `pnpm run dev`
 
-
 ## Author
 
-Liplan Lekipising  
+Liplan Lekipising
 Visit my [Portfolio](https://lekipising.com)
