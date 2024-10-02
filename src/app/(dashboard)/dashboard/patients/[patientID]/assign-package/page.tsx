@@ -19,8 +19,8 @@ export default function DrugCycle() {
           onClick={() =>
             setActiveCycle({ id: 1, interval: 2, startDate: "2022-11-14" })
           }
-          className={`w-full border-[1px] cursor-pointer pb-4 transition-all ease-in duration-150 justify-between border-[#E0E0E0] h-[120px] flex flex-col ${
-            activeCycle?.id === 1 ? "border-[1px] border-[#276DF7]" : ""
+          className={`w-full border-[1px] cursor-pointer pb-4 transition-all ease-in duration-150 justify-between h-[120px] flex flex-col ${
+            activeCycle?.id === 1 ? "border-[#276DF7]" : "border-[#E0E0E0]"
           }`}
         >
           <div
