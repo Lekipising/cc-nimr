@@ -1,9 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="font-[family-name:var(--font-geist-sans)] h-svh w-full flex">
+    <main className="h-svh w-full flex">
       <section className="w-[40%] h-full flex justify-start relative flex-col items-center pt-16 gap-16">
         <Image src="/logo.svg" alt="Nimcure Logo" height={56} width={56} />
 
@@ -27,7 +28,10 @@ export default function Home() {
                 placeholder="Password"
                 className="border-[1px] pr-16 border-[#808080] outline-none transition-all ease-in duration-300 h-[60px] p-4 color-[#000000] w-full focus:border-nim-500 focus-within:border-nim-500 font-medium"
               />
-              <button className="absolute top-1/2 right-4 text-gray-500 font-medium text-sm transform -translate-y-1/2">
+              <button
+                onClick={(e) => e.preventDefault()}
+                className="absolute top-1/2 right-4 text-gray-500 font-medium text-sm transform -translate-y-1/2"
+              >
                 SHOW
               </button>
             </div>
@@ -82,14 +86,14 @@ export default function Home() {
         </footer>
       </section>
       <section className="w-[60%] h-full bg-nim-500 overflow-visible relative">
-        {/* <div className="relative w-[calc(100%_+_300px)] h-full">
+        <div className="relative w-[100%] h-full">
           <Image
             src="https://res.cloudinary.com/dpnbddror/image/upload/v1727543456/Group_625593_1_yyhppt.png"
             alt="Nimcure"
             fill
             className="object-contain"
           />
-        </div> */}
+        </div>
 
         <div className="absolute bottom-8 left-0 w-full text-left pl-16 text-white">
           <h2 className="font-extrabold text-2xl">
