@@ -53,7 +53,10 @@ export default function Deliveries({
               key={filter.title}
               text={filter.title}
               to={`/dashboard/deliveries?filter=${filter.query}`}
-              isActive={searchParams?.filter === filter.query}
+              isActive={
+                searchParams?.filter === filter.query ||
+                (!searchParams?.filter && filter.title === "Paid")
+              }
               count={filter.count}
             />
           ))}
@@ -69,16 +72,13 @@ export default function Deliveries({
               key={filter.title}
               text={filter.title}
               to={`/dashboard/deliveries?filter=${filter.query}`}
-              isActive={
-                searchParams?.filter === filter.query ||
-                (!searchParams?.filter && filter.title === "Successful")
-              }
+              isActive={searchParams?.filter === filter.query}
               count={filter.count}
             />
           ))}
         </div>
       </div>
-      <DeliveriesTable activeFilter={searchParams?.filter ?? "Successful"} />
+      <DeliveriesTable activeFilter={searchParams?.filter ?? "Paid"} />
     </section>
   );
 }
