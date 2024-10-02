@@ -1,5 +1,5 @@
 import React from "react";
-import { PatientInfo } from "../page";
+import { PatientInfo } from "../components/patient.info";
 
 export default function DeliveryInfo() {
   return (
