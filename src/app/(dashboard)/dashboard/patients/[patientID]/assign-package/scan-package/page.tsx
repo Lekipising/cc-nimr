@@ -1,22 +1,34 @@
 "use client";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import QrScanner from "qr-scanner";
 
 export default function ScanPackage() {
   const [chosenOption, setChosenOption] = useState("");
 
-  const videoElem = useRef<HTMLVideoElement>(null);
+  const qrScanner = useRef<QrScanner>();
 
-  // To enforce the use of the new api with detailed scan results, call the constructor with an options object, see below.
-  const qrScanner = new QrScanner(
-    videoElem.current,
-    (result) => console.log("decoded qr code:", result),
-    {
-      onDecodeError: (error) => console.error(error),
+  useEffect(() => {
+    const videoElem = document.getElementById("scan-video") as HTMLVideoElement;
+
+    if (videoElem) {
+      qrScanner.current = new QrScanner(
+        videoElem,
+        (result) => console.log("decoded qr code:", result),
+        {
+          onDecodeError: (error) => console.error(error),
+        }
+      );
+
+      qrScanner.current.start();
+
+      // close after 5 seconds
+      setTimeout(() => {
+        qrScanner?.current?.stop();
+      }, 5000);
     }
-  );
+  }, [chosenOption]);
 
   return (
     <div className="w-full max-w-3xl flex flex-col gap-16">
@@ -31,8 +43,17 @@ export default function ScanPackage() {
             <Image src="/scan.png" width={300} height={300} alt="Scan" />
             <button
               onClick={() => {
-                setChosenOption("scan");
-                qrScanner.start();
+                QrScanner.hasCamera()
+                  .then((result) => {
+                    if (result) {
+                      setChosenOption("scan");
+                    } else {
+                      alert("No camera found. Please enter code manually");
+                    }
+                  })
+                  .catch((error) => {
+                    console.error(error);
+                  });
               }}
               className="h-[60px] mt-auto w-[245px] text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
             >
@@ -64,11 +85,7 @@ export default function ScanPackage() {
         <div className="flex flex-col gap-8 items-center mx-auto">
           {chosenOption === "scan" ? (
             <div className="w-full">
-              <video
-                className="h-[300px] w-[300px]"
-                ref={videoElem}
-                id="scan-video"
-              ></video>
+              <video className="h-[300px] w-[300px]" id="scan-video"></video>
 
               <p className="text-[#0D0E1E] font-semibold mt-8 text-center w-full">
                 Scanning Package...
