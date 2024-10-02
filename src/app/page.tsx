@@ -9,7 +9,7 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <main className="h-svh w-full flex">
+    <main className="h-screen w-full flex overflow-hidden">
       <section className="w-[40%] h-full flex justify-start relative flex-col items-center pt-16 gap-16">
         <Image src="/logo.svg" alt="Nimcure Logo" height={56} width={56} />
 
@@ -95,18 +95,23 @@ export default function Home() {
                 height={8}
                 width={150}
                 className="object-contain"
+                priority
               />
             </a>
           </p>
         </footer>
       </section>
-      <section className="w-[60%] h-full bg-nim-500 overflow-visible relative">
-        <div className="relative w-[100%] h-full">
+      <section className="w-[60%] h-full flex justify-start relative">
+        <div className="absolute top-0 inset-x-0 h-1/2 bg-nim-500" />
+        <div className="absolute bottom-0 inset-x-0 h-1/2 bg-[#2C2AA1]" />
+        <div className="relative w-[100%] h-4/5">
           <Image
             src="https://res.cloudinary.com/dpnbddror/image/upload/v1727543456/Group_625593_1_yyhppt.png"
             alt="Nimcure"
-            fill
-            className="object-contain"
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="w-full h-auto max-h-[100%] object-cover"
           />
         </div>
 
