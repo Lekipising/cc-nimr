@@ -79,7 +79,7 @@ function OneStepAssign({
           id={text}
           checked={isActive}
         />
-        <h3 className="font-bold">Set Drug Cycle/Length</h3>
+        <h3 className="font-bold">{text}</h3>
       </div>
       {isActive && (
         <div className="w-full h-[4px] rounded-t-2xl shrink-0 bg-[#276DF7]"></div>
