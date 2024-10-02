@@ -5,46 +5,49 @@ import Link from "next/link";
 export default function Deliveries({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: {
+    filter: "Paid" | "Unpaid" | "Pending" | "Successful" | "Failed" | undefined;
+  };
 }) {
   const deliveriesFilters = {
     unassigned: [
       {
         title: "Paid",
-        count: 10,
-        query: "paid",
+        count: 12,
+        query: "Paid",
       },
       {
         title: "Unpaid",
-        count: 12,
-        query: "unpaid",
+        count: 8,
+        query: "Unpaid",
       },
     ],
     assigned: [
       {
         title: "Pending",
-        count: 10,
-        query: "pending",
+        count: 1,
+        query: "Pending",
       },
       {
         title: "Successful",
-        count: 5,
-        query: "successful",
+        count: 1,
+        query: "Successful",
       },
       {
         title: "Failed",
-        count: 3,
-        query: "failed",
+        count: 2,
+        query: "Failed",
       },
     ],
   };
   return (
     <section className="p-8 flex gap-32">
       <div className="w-[300px] flex flex-col gap-16">
-        <div className="flex flex-col gap-4">
-          <span className="font-bold text-[#2A2A2AB2]">
+        <div className="flex flex-col gap-4 bg-white">
+          <span className="font-bold text-[#2A2A2AB2] pt-4 px-4">
             Unassigned Deliveries
           </span>
+          <div className="bg-[#F9F9F9] h-[1px] w-full" />
           {deliveriesFilters.unassigned.map((filter) => (
             <OneSideItem
               key={filter.title}
@@ -55,22 +58,27 @@ export default function Deliveries({
             />
           ))}
         </div>
-        <div className="flex flex-col gap-4">
-          <span className="font-bold text-[#2A2A2AB2]">
+        <div className="flex flex-col gap-4 bg-white">
+          <span className="font-bold text-[#2A2A2AB2] pt-4 px-4">
             Assigned Deliveries
           </span>
+          <div className="bg-[#F9F9F9] h-[1px] w-full" />
+
           {deliveriesFilters.assigned.map((filter) => (
             <OneSideItem
               key={filter.title}
               text={filter.title}
               to={`/dashboard/deliveries?filter=${filter.query}`}
-              isActive={searchParams?.filter === filter.query}
+              isActive={
+                searchParams?.filter === filter.query ||
+                (!searchParams?.filter && filter.title === "Successful")
+              }
               count={filter.count}
             />
           ))}
         </div>
       </div>
-      <DeliveriesTable />
+      <DeliveriesTable activeFilter={searchParams?.filter ?? "Successful"} />
     </section>
   );
 }
