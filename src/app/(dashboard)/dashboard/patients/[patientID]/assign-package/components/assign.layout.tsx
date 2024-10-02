@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import ConfirmAssignment from "./confirm.assign";
 
 export default function AssignPackageWrapper() {
   const pathname = usePathname();
@@ -19,6 +21,8 @@ export default function AssignPackageWrapper() {
       to: "/dashboard/patients/1/assign-package/scan-package",
     },
   ];
+
+  const [showConfirmAssignment, setShowConfirmAssignment] = useState(false);
 
   return (
     <div className="w-full flex items-center gap-32 h-[60px] border-b-[1px] border-[#EFEFEF]">
@@ -57,7 +61,10 @@ export default function AssignPackageWrapper() {
 
       {assignSteps.findIndex((step) => step.to === pathname) + 1 ===
       assignSteps.length ? (
-        <button className="h-[45px] w-[128px] absolute bottom-16 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold">
+        <button
+          onClick={() => setShowConfirmAssignment(true)}
+          className="h-[45px] w-[128px] absolute bottom-16 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
+        >
           Assign Package
         </button>
       ) : (
@@ -72,6 +79,14 @@ export default function AssignPackageWrapper() {
         >
           Next
         </Link>
+      )}
+
+      {showConfirmAssignment && (
+        <ConfirmAssignment
+          closeModal={() => {
+            setShowConfirmAssignment(false);
+          }}
+        />
       )}
     </div>
   );
