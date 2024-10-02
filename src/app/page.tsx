@@ -1,8 +1,13 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <main className="h-svh w-full flex">
       <section className="w-[40%] h-full flex justify-start relative flex-col items-center pt-16 gap-16">
@@ -18,21 +23,31 @@ export default function Home() {
                 type="text"
                 name="email"
                 placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
                 className="border-[1px] border-[#808080] outline-none transition-all ease-in duration-300 h-[60px] p-4 color-[#000000] w-full focus:border-nim-500 focus-within:border-nim-500 font-medium"
               />
             </div>
             <div className="relative w-full">
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={8}
                 className="border-[1px] pr-16 border-[#808080] outline-none transition-all ease-in duration-300 h-[60px] p-4 color-[#000000] w-full focus:border-nim-500 focus-within:border-nim-500 font-medium"
               />
               <button
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowPassword((prev) => !prev);
+                }}
                 className="absolute top-1/2 right-4 text-gray-500 font-medium text-sm transform -translate-y-1/2"
               >
-                SHOW
+                {showPassword ? "HIDE" : "SHOW"}
               </button>
             </div>
             <div className="flex justify-between items-center">
