@@ -182,7 +182,7 @@ const AssignRider = () => {
         )}
       </div>
 
-      <div className="overflow-y-auto max-h-[300px] max-w-3xl">
+      <div className="overflow-y-auto max-h-[30vh] max-w-3xl">
         {filteredRiders.map((rider, index) => (
           <OneRider
             key={index}

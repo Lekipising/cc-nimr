@@ -42,16 +42,16 @@ export default function ScanPackage() {
   }, [chosenOption]);
 
   return (
-    <div className="w-full max-w-3xl flex flex-col gap-16">
+    <div className="w-full max-w-3xl flex flex-col gap-8">
       <p className="text-center text-lg text-[#18131A]">
         Scan a package to assign it to{" "}
         <span className="font-bold">Oluwaseun Aregbesola</span>
       </p>
 
       {chosenOption?.length === 0 ? (
-        <div className="w-full grid grid-cols-2 relative h-[300px]">
+        <div className="w-full grid grid-cols-2 relative h-[30vh]">
           <div className="flex flex-col gap-8 items-center">
-            <Image src="/scan.png" width={300} height={300} alt="Scan" />
+            <Image src="/scan.png" width={200} height={200} alt="Scan" />
             <button
               onClick={() => {
                 QrScanner.hasCamera()

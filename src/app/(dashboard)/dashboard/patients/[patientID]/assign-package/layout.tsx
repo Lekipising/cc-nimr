@@ -7,9 +7,9 @@ export default function AssignPackageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="w-full flex flex-col relative mt-8 min-h-[calc(100vh_-_200px)]">
+    <section className="w-full flex flex-col relative mt-8 2xl:min-h-[calc(100vh_-_200px)] min-h-[calc(100vh_-_140px)]">
       <AssignPackageWrapper />
-      <div className="w-full flex mt-16">
+      <div className="w-full flex mt-8">
         <div className="w-[400px] flex flex-col gap-8">
           <PatientInfoPair label="Hospital ID" value="1AFHFH093" />
           <PatientInfoPair label="Name" value="Oluwaseun Aregbesola" />

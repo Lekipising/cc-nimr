@@ -53,7 +53,7 @@ export default function AssignPackageWrapper() {
                 ].to
               : pathname
           }
-          className="h-[45px] w-[128px] absolute bottom-16 left-[600px] text-[#1F5AF4] border-[#1F5AF4] border-[1px] text-sm flex justify-center items-center gap-2 font-semibold"
+          className="h-[45px] w-[128px] absolute bottom-8 left-[600px] text-[#1F5AF4] border-[#1F5AF4] border-[1px] text-sm flex justify-center items-center gap-2 font-semibold"
         >
           Back
         </Link>
@@ -63,7 +63,7 @@ export default function AssignPackageWrapper() {
       assignSteps.length ? (
         <button
           onClick={() => setShowConfirmAssignment(true)}
-          className="h-[45px] w-[128px] absolute bottom-16 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
+          className="h-[45px] w-[128px] absolute bottom-8 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
         >
           Assign Package
         </button>
@@ -75,7 +75,7 @@ export default function AssignPackageWrapper() {
                 assignSteps.length
             ].to
           }
-          className="h-[45px] w-[128px] absolute bottom-16 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
+          className="h-[45px] w-[128px] absolute bottom-8 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
         >
           Next
         </Link>

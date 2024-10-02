@@ -56,7 +56,7 @@ export default function RiderInfo() {
         </div>
         <button
           disabled
-          className="h-[45px] mt-16 w-max px-6 ml-auto text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
+          className="h-[45px] mt-16 mb-4 w-max px-6 ml-auto text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
         >
           Save Changes
         </button>
