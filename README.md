@@ -55,6 +55,7 @@ This project prioritizes the user experience and UI design, ensuring a seamless 
 - Develop the Admin and Riders pages.
 - Implement additional features based on user feedback.
 - Enhance UI with animations and micro-interactions.
+- Once integrated with a backend, implement end to end testing.
 
 ## Getting Started
 
