@@ -32,6 +32,10 @@ export default function AssignPackageWrapper() {
             text={step.text}
             to={step.to}
             isActive={pathname === step.to}
+            doneStep={
+              assignSteps.findIndex((step) => step.to === pathname) >
+              assignSteps.findIndex((x) => x.to === step.to)
+            }
           />
         ))}
       </div>
@@ -59,26 +63,48 @@ function OneStepAssign({
   text,
   to,
   isActive,
+  doneStep,
 }: {
   text: string;
   to: string;
   isActive: boolean;
+  doneStep: boolean;
 }) {
   return (
     <Link
       href={to}
       className={`flex flex-col h-full px-4 hover:bg-[#276DF7]/20 transition-all ease-in duration-150 pt-2 justify-between ${
-        isActive ? "text-[#276DF7] font-bold" : "text-[#827F98] font-medium"
+        isActive
+          ? "text-[#276DF7] font-bold"
+          : `${doneStep ? "text-[#01A85A]" : "text-[#827F98]"} font-medium`
       }`}
     >
       <div className="flex items-center gap-2">
-        <input
-          type="radio"
-          name={text}
-          className="h-5 w-5"
-          id={text}
-          checked={isActive}
-        />
+        {doneStep ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="lucide lucide-circle-check w-5 h-5"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+        ) : (
+          <input
+            type="radio"
+            name={text}
+            className="h-5 w-5"
+            id={text}
+            checked={isActive}
+          />
+        )}
         <h3 className="font-bold">{text}</h3>
       </div>
       {isActive && (
