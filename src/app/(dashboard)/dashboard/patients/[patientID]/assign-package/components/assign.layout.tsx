@@ -40,21 +40,39 @@ export default function AssignPackageWrapper() {
         ))}
       </div>
 
-      <Link
-        href={
-          // select next step, find current index, add 1, get next step
-          assignSteps.findIndex((step) => step.to === pathname) + 1 ===
-          assignSteps.length
-            ? "/dashboard/deliveries"
-            : assignSteps[
-                (assignSteps.findIndex((step) => step.to === pathname) + 1) %
-                  assignSteps.length
-              ].to
-        }
-        className="h-[45px] w-[128px] absolute bottom-16 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
-      >
-        Next
-      </Link>
+      {assignSteps.findIndex((step) => step.to === pathname) - 1 >= 0 && (
+        <Link
+          href={
+            assignSteps.findIndex((step) => step.to === pathname) - 1 >= 0
+              ? assignSteps[
+                  assignSteps.findIndex((step) => step.to === pathname) - 1
+                ].to
+              : pathname
+          }
+          className="h-[45px] w-[128px] absolute bottom-16 left-[600px] text-[#1F5AF4] border-[#1F5AF4] border-[1px] text-sm flex justify-center items-center gap-2 font-semibold"
+        >
+          Back
+        </Link>
+      )}
+
+      {assignSteps.findIndex((step) => step.to === pathname) + 1 ===
+      assignSteps.length ? (
+        <button className="h-[45px] w-[128px] absolute bottom-16 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold">
+          Assign Package
+        </button>
+      ) : (
+        <Link
+          href={
+            assignSteps[
+              (assignSteps.findIndex((step) => step.to === pathname) + 1) %
+                assignSteps.length
+            ].to
+          }
+          className="h-[45px] w-[128px] absolute bottom-16 right-0 text-white bg-[#1F5AF4] text-sm flex justify-center items-center gap-2 font-semibold"
+        >
+          Next
+        </Link>
+      )}
     </div>
   );
 }
