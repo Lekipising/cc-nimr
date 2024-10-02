@@ -103,7 +103,7 @@ export default function ScanPackage() {
         </div>
       ) : (
         <div className="flex flex-col gap-8 items-center mx-auto">
-          {chosenOption === "scan" && (
+          {!scanStepCompleted && chosenOption === "scan" && (
             <div className="w-full">
               {scanned ? (
                 <svg
@@ -116,7 +116,7 @@ export default function ScanPackage() {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  className="lucide lucide-circle-check h-32 w-32 text-[#01A85A]"
+                  className="lucide lucide-circle-check mx-auto h-32 w-32 text-[#01A85A]"
                 >
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
