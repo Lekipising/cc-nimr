@@ -94,7 +94,7 @@ export default function AssignPackageWrapper() {
 
 function OneStepAssign({
   text,
-  to,
+
   isActive,
   doneStep,
 }: {
@@ -104,9 +104,8 @@ function OneStepAssign({
   doneStep: boolean;
 }) {
   return (
-    <Link
-      href={to}
-      className={`flex flex-col h-full px-4 hover:bg-[#276DF7]/20 transition-all ease-in duration-150 pt-2 justify-between ${
+    <div
+      className={`flex cursor-default flex-col h-full px-4 hover:bg-[#276DF7]/20 transition-all ease-in duration-150 pt-2 justify-between ${
         isActive
           ? "text-[#276DF7] font-bold"
           : `${doneStep ? "text-[#01A85A]" : "text-[#827F98]"} font-medium`
@@ -143,6 +142,6 @@ function OneStepAssign({
       {isActive && (
         <div className="w-full h-[4px] rounded-t-2xl shrink-0 bg-[#276DF7]"></div>
       )}
-    </Link>
+    </div>
   );
 }
