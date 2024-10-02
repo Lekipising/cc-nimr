@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function PatientsTable() {
   return (
-    <div className="w-full mt-8">
+    <div className="w-full mt-8 relative">
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-2">
           <label htmlFor="sort" className="mr-2 text-[#262626CC] text-sm">

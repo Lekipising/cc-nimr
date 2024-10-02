@@ -41,8 +41,8 @@ export default function Deliveries({
     ],
   };
   return (
-    <section className="p-8 flex gap-32">
-      <div className="w-[300px] flex flex-col gap-16">
+    <section className="p-8 flex gap-32 items-start">
+      <div className="w-[300px] sticky top-0 flex flex-col gap-16">
         <div className="flex flex-col gap-4 bg-white">
           <span className="font-bold text-[#2A2A2AB2] pt-4 px-4">
             Unassigned Deliveries

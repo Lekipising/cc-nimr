@@ -54,7 +54,7 @@ export default function Home() {
 
             <Link
               href="/dashboard"
-              className="bg-nim-500 mt-8 text-white flex justify-center items-center font-semibold h-[60px] transition-all ease-in duration-300 hover:bg-nim-600"
+              className="bg-nim-500 mt-8 mb-16 text-white flex justify-center items-center font-semibold h-[60px] transition-all ease-in duration-300 hover:bg-nim-600"
             >
               Login
             </Link>
